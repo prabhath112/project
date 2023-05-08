@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="css\styles.css">
+    <title>Survey Form</title>
+</head>
+<body>
+    <h1 id="title">Survey Form</h1>
+    <div id="main-form">
+        <p id="description">freeCodeCamp for learning hehe</p>
+        <form id="survey-form" method="GET">
+            <div class="rowTab">
+                <div class="labels">
+                    <label id="name-label" for="name"> Name: </label>
+                </div>
+                <div class="rightTab">
+                    <input autofocus type="text" name="name" id="name" class="input-field" placeholder="Enter your name"required>
+                </div>
+                </div>
+            <div class="rowTab">
+                <div class="labels">
+                    <label id="email-label" for="name"> Email: </label>
+                </div>
+                <div class="rightTab">
+                    <input type="email" name="email" id="email" class="input-field" required placeholder="Enter your Email">
+                </div>
+                </div>
+                <div class="rowTab">
+                <div class="labels">
+                    <label id="number-label" for="age">Age: </label>
+                </div>
+                <div class="rightTab">
+                    <input type="number" name="age" id="number" min="1" max="100" class="input-field" placeholder="Age"required>
+                </div>
+                </div>
+                <div class="rowTab">
+                <div class="labels">
+                    <label for="Currentpost">Your Gender:</label>
+                </div>
+                <div class="rightTab">
+                    <select id="dropdown" name="gender" class="dropdown">
+                        <option disabled value>Select an option</option>
+                        <option value="Male">Male</option>
+                        <option value="Female">Female</option>
+                        <option value="other">Other</option>
+                    </select>
+                </div>
+            </div>
+            <div class="rowTab">
+                <div class="labels">
+                    <label for="userRating">How likely is that you would recommend freeCodeCamp to a friend?</label>
+                </div>
+                <div class="rightTab">
+                    <ul style="list-style: none;">
+                        <li class="radio"><label>Definitely<input name="radio-buttons" value="1" type="radio"
+                                    class="userRatings"></label></li>
+                        <li class="radio"><label>Maybe<input name="radio-buttons" value="2" type="radio"
+                                    class="userRatings"></label></li>
+                        <li class="radio"><label>Not sure<input name="radio-buttons" value="3" type="radio"
+                                    class="userRatings"></label></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="rowTab">
+                <div class="labels">
+                    <label for="most-like">What do you like most in freecodecamp: </label>
+                </div>
+                <div class="rightTab">
+                    <select id="most-like" name="mostLike" class="dropdown">
+                        <option disabled selected value>Select an option</option>
+                        <option value="Features">Features</option>
+                        <option value="Learning">Learning</option>
+                        <option value="openSource">Open Source</option>
+                    </select>
+                </div>
+            </div>
+            <div class="rowTab">
+                <div class="labels">
+                    <label for="preferences">Things that should be improved in the future<br>(Check all that apply):
+                    </label>
+                </div>
+                <div class="rightTab">
+                    <ul id="preferences" style="list-style: none;">
+                        <li class="checkbox"><label><input name="prefer" value="1" type="checkbox"
+                                    class="userRatings">User interface</label></li>
+                        
+                        <li class="checkbox"><label><input name="prefer" value="10" type="checkbox"
+                                    class="userRatings">Forum</label></li>
+                        <li class="checkbox"><label><input name="prefer" value="10" type="checkbox"
+                                    class="userRatings">course</label></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="rowTab">
+                <div class="labels">
+                    <label for="comments">Any Comments or Suggestions?</label>
+                </div>
+                <div class="rightTab">
+                    <textarea id="comments" class="input-field" style="height:50px;resize:vertical;" name="comment"
+                        placeholder="Enter your comment here..."></textarea>
+                </div>
+            </div>
+            <button id="submit" type="submit">Submit</button>
+        </form>
+    </div>
+</body>
+</html>

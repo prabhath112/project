@@ -1,0 +1,152 @@
+
+html,
+body {
+    min-width: 320px;
+    text-align: center;
+    font-family: 'Raleway', Helvetica, sans-serif;
+    background: #E3F2C1;
+   
+    background-position: center;
+    background-attachment: fixed;
+    font-size: 1.2rem;
+    font-weight: 400;
+    line-height: 1.2;
+    color: navy;
+    padding: 20px; 
+  background-repeat: no-repeat;
+  position: relative;
+  width: auto;
+  height: auto;
+  margin-left: auto;
+  margin-right: auto;
+
+}
+
+#title {
+    font-size: 2.5em;
+    font-weight: 500;
+    color:black;
+    margin-bottom: 0.5em;
+    text-shadow: 0 0 0.7em ghostwhite;
+    
+}
+
+#main-form {
+    width: 75%;
+    padding: 10px;
+    margin: 0 auto;
+    max-width: 900px;
+    padding-top: 20px;
+    border-radius: 10px;
+    background: rgb(250, 250, 250);
+    box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.5);
+    background-color: hsla(164, 67%, 85%, 0.829);
+}
+
+.labels {
+    width: 40%;
+    padding: 5px;
+    margin-top: 10px;
+    text-align: right;
+    vertical-align: top;
+    display: inline-block;
+}
+
+.rightTab {
+    width: 48%;
+    text-align: left;
+    display: inline-block;
+    vertical-align: middle;
+}
+
+.input-field {
+    height: 20px;
+    width: 280px;
+    padding: 15px;
+    margin: 10px;
+    border-radius: 2px;
+    border: 1px solid #c0c0c0;
+}
+
+#userAge {
+    width: 40px;
+}
+
+.userRatings,
+input[type="checkbox"] {
+    float: left;
+    margin-right: 5px;
+}
+
+#submit {
+    background-color: #0a439e;
+    width: 96px;
+    margin: 10px;
+    height: 40px;
+    color: white;
+    font-size: 1em;
+    border: 0px solid;
+    border-radius: 4px;
+}
+#submit:hover {
+    cursor: pointer;
+    background: green;
+}
+
+.dropdown {
+    height: 40px;
+    width: 140px;
+    padding: 5px;
+    margin: 10px;
+    margin-top: 15px;
+    border-radius: 2px;
+    border: 1px solid #c0c0c0;
+}
+
+.radio,
+.checkbox {
+    left: -43px;
+    display: block;
+    margin-left: 10px;
+    position: relative;
+    padding-bottom: 10px;
+}
+
+
+@media screen and (max-width: 833px) {
+    .input-field {
+        width: 80%;
+    }
+
+    select {
+        width: 90%;
+    }
+
+    h2 {
+        background: tomato;
+        padding: 2px;
+    }
+}
+
+@media screen and(max-width: 520px) {
+    .labels {
+        width: 100%;
+        text-align: left;
+    }
+
+    .rightTab {
+        width: 80%;
+        float: left;
+        
+    }
+
+    .input-field,select {
+        width: 100%;
+    }
+    
+    h2 {
+        font-size: 15px;
+        padding: 2px;
+    }
+}
+
