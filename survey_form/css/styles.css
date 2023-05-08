@@ -4,7 +4,7 @@ body {
     min-width: 320px;
     text-align: center;
     font-family: 'Raleway', Helvetica, sans-serif;
-    background: #E3F2C1;
+    background: linear-gradient(90deg,#d48d8d,#545381,#eea0f8);
    
     background-position: center;
     background-attachment: fixed;
@@ -38,7 +38,7 @@ body {
     max-width: 900px;
     padding-top: 20px;
     border-radius: 10px;
-    background: rgb(250, 250, 250);
+    background: rgb(121, 69, 69);
     box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.5);
     background-color: hsla(164, 67%, 85%, 0.829);
 }
