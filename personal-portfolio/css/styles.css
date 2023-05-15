@@ -393,7 +393,18 @@
     margin-top: 4rem;
     justify-content: center;
   }
-  
+  .textmove{
+    width:100%;
+    height:100px;
+    display:flex;
+    font-size:2.4rem ;
+    color: black;
+    
+
+  }
+  textmove::after{
+    scale
+  }
   .contact-details {
     font-size: 2.4rem;
     text-shadow: 2px 2px 1px #1f1f1f;
@@ -428,3 +439,7 @@
       flex-direction: column;
     }
   }
+  
+.listcolor{
+  colo
+}
