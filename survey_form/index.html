@@ -11,13 +11,15 @@
     <h1 id="title">Survey Form</h1>
     <div id="main-form">
         <p id="description">freeCodeCamp for learning hehe</p>
-        <form id="survey-form" method="GET">
+        <form name="myform" id="survey-form" autocomplete="off" action="#">
+            
             <div class="rowTab">
                 <div class="labels">
                     <label id="name-label" for="name"> Name: </label>
                 </div>
                 <div class="rightTab">
-                    <input autofocus type="text" name="name" id="name" class="input-field" placeholder="Enter your name"required>
+                    <input autofocus type="text" name="name"autocomplete="off" id="name" class="input-field"  placeholder="Enter your name"required>
+                    <p id="error-message-name"></p>
                 </div>
                 </div>
             <div class="rowTab">
@@ -25,7 +27,8 @@
                     <label id="email-label" for="name"> Email: </label>
                 </div>
                 <div class="rightTab">
-                    <input type="email" name="email" id="email" class="input-field" required placeholder="Enter your Email">
+                    <input type="email" name="email"autocomplete="off" id="email" class="input-field" required placeholder="Enter your Email">
+                    <p id="error-message-email"></p>
                 </div>
                 </div>
                 <div class="rowTab">
@@ -34,15 +37,18 @@
                 </div>
                 
                 <div class="rightTab">
-                    <input type="number" name="age" id="number" min="1" max="100" class="input-field" placeholder="Age"required>
+                    <input type="number" name="age"autocomplete="off" onpaste="return false;" id="age" min="14" max="99" class="input-field" placeholder="Age" required>
+                    <p id="error-message-age"></p>
                 </div>
                 </div>
-                <div class="rowTab">
+                <!-- 1 -->
+             <div class="rowTab">
                     <div class="labels">
                         <label for="Currentpost">Your city:</label>
                     </div>
                      <div class="rightTab">
-                    <select id="dropdownCity" name="city" class="dropdown">
+                    <select id="dropdownCity"autocomplete="off" name="city" class="dropdown"required>
+                        <option disabled selected value>Select an option</option>
                         <option value="bangalore">bangalore</option>
                         <option value="mangalore">mangalore</option>
                         <option value="udupi">udupi</option>
@@ -54,8 +60,8 @@
                     <label for="Currentpost">Your Gender:</label>
                 </div>
                 <div class="rightTab">
-                    <select id="dropdown" name="gender" class="dropdown">
-                        <option disabled value>Select an option</option>
+                    <select id="dropdown" name="gender" class="dropdown" autocomplete="off" required>
+                        <option disabled selected value>Select an option</option>
                         <option value="Male">Male</option>
                         <option value="Female">Female</option>
                         <option value="other">Other</option>
@@ -67,7 +73,7 @@
                     <label for="userRating">How likely is that you would recommend freeCodeCamp to a friend?</label>
                 </div>
                 <div class="rightTab">
-                    <ul style="list-style: none;">
+                    <ul style="list-style: none;"autocomplete="off" required>
                         <li class="radio"><label>Definitely<input name="radio-buttons" value="1" type="radio"
                                     class="userRatings"></label></li>
                         <li class="radio"><label>Maybe<input name="radio-buttons" value="2" type="radio"
@@ -82,7 +88,7 @@
                     <label for="most-like">What do you like most in freecodecamp: </label>
                 </div>
                 <div class="rightTab">
-                    <select id="most-like" name="mostLike" class="dropdown">
+                    <select id="most-like" name="mostLike" class="dropdown"autocomplete="off" required>
                         <option disabled selected value>Select an option</option>
                         <option value="Features">Features</option>
                         <option value="Learning">Learning</option>
@@ -96,7 +102,7 @@
                     </label>
                 </div>
                 <div class="rightTab">
-                    <ul id="preferences" style="list-style: none;">
+                    <ul id="preferences" style="list-style: none;"autocomplete="off" required>
                         <li class="checkbox"><label><input name="prefer" value="1" type="checkbox"
                                     class="userRatings">User interface</label></li>
                         
@@ -115,9 +121,13 @@
                     <textarea id="comments" class="input-field" style="height:50px;resize:vertical;" name="comment"
                         placeholder="Enter your comment here..."></textarea>
                 </div>
-            </div>
-            <button id="submit" type="submit">Submit</button>
+            </div> 
+            <!-- 2 -->
+            <input id="submit" type="submit" value="submit" onclick="confirm('name : '+document.getElementById('name').value+'\nemail: '+document.getElementById('email').value
+            +'\nAge: '+document.getElementById('age').value);" >
+
         </form>
     </div>
+    <script src="js/script2.js"></script>
 </body>
 </html>
