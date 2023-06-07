@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="css\styles.css">
+    <title>Survey Form</title>
+    <style>
+        .popover {
+            position: absolute;
+            background-color: #ff9999;
+            color: #ffffff;
+            padding: 6px 12px;
+            border-radius: 4px;
+            font-size: 14px;
+            visibility: hidden;
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+        
+        .invalid {
+            border-color: #ff0000;
+        }
+        
+        .invalid + .popover {
+            visibility: visible;
+            opacity: 1;
+        }
+    </style>
+</head>
+
+<body>
+    <h1 id="title">Survey Form</h1>
+    <div id="main-form">
+        <p id="description">freeCodeCamp for learning hehe</p>
+        <form name="myform" id="survey-form" autocomplete="off" action="#">
+
+            <div class="rowTab">
+                <div class="labels">
+                    <label id="name-label" for="name"> Name: </label>
+                </div>
+                <div class="rightTab">
+                    <input autofocus type="text" name="name" autocomplete="off" id="name" class="input-field" placeholder="Enter your name" required>
+                    <p id="error-message-name"></p>
+                </div>
+            </div>
+            <div class="rowTab">
+                <div class="labels">
+                    <label id="email-label" for="name"> Email: </label>
+                </div>
+                <div class="rightTab">
+                    <input type="email" name="email" autocomplete="off" id="email" class="input-field" required placeholder="Enter your Email">
+                    <p id="error-message-email"></p>
+                </div>
+            </div>
+            <div class="rowTab">
+                <div class="labels">
+                    <label id="password-label" for="password"> Password: </label>
+                </div>
+                <div class="rightTab">
+                    <input type="password" name="Password" autocomplete="off" id="password" class="input-field" required placeholder="Enter your Password">
+                    <p id="error-message-password"></p>
+                </div>
+            </div>
+            <div class="rowTab">
+                <div class="labels">
+                    <label id="number-label" for="age">Age: </label>
+                </div>
+
+                <div class="rightTab">
+                    <input type="number" name="age" autocomplete="off" onpaste="return false;" id="age" min="14" max="99" class="input-field" placeholder="Age" required>
+                    <p id="error-message-age"></p>
+                </div>
+            </div>
+            <!-- 1 -->
+            <div class="rowTab">
+                <div class="labels">
+                    <label for="Currentpost">Your city:</label>
+                </div>
+                <div class="rightTab">
+                    <select id="dropdownCity" autocomplete="off" name="city" class="dropdown" required>
+                        <option disabled selected value>Select an option</option>
+                        <option value="bangalore">bangalore</option>
+                        <option value="mangalore">mangalore</option>
+                        <option value="udupi">udupi</option>
+                    </select>
+                </div>
+            </div>
+            <div class="rowTab">
+                <div class="labels">
+                    <label for="Currentpost">Your Gender:</label>
+                </div>
+                <div class="rightTab">
+                    <select id="dropdown" name="gender" class="dropdown" autocomplete="off" required>
+                        <option disabled selected value>Select an option</option>
+                        <option value="Male">Male</option>
+                        <option value="Female">Female</option>
+                        <option value="other">Other</option>
+                    </select>
+                </div>
+            </div>
+            <div class="rowTab">
+                <div class="labels">
+                    <label for="userRating">How likely is that you would recommend freeCodeCamp to a friend?</label>
+                </div>
+                <div class="rightTab">
+                    <ul style="list-style: none;" autocomplete="off" required>
+                        <li class="radio"><label>Definitely<input name="radio-buttons" value="1" type="radio" class="userRatings"></label></li>
+                        <li class="radio"><label>Maybe<input name="radio-buttons" value="2" type="radio" class="userRatings"></label></li>
+                        <li class="radio"><label>Not sure<input name="radio-buttons" value="3" type="radio" class="userRatings"></label></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="rowTab">
+                <div class="labels">
+                    <label for="most-like">What do you like most in freecodecamp: </label>
+                </div>
+                <div class="rightTab">
+                    <select id="most-like" name="mostLike" class="dropdown" autocomplete="off" required>
+                        <option disabled selected value>Select an option</option>
+                        <option value="Features">Features</option>
+                        <option value="Learning">Learning</option>
+                        <option value="openSource">Open Source</option>
+                    </select>
+                </div>
+            </div>
+            <div class="rowTab">
+                <div class="labels">
+                    <label for="preferences">Things that should be improved in the future<br>(Check all that apply):
+                    </label>
+                </div>
+                <div class="rightTab">
+                    <ul id="preferences" style="list-style: none;" autocomplete="off" required>
+                        <li class="checkbox"><label><input name="prefer" value="1" type="checkbox" class="userRatings">User interface</label></li>
+
+                        <li class="checkbox"><label><input name="prefer" value="10" type="checkbox" class="userRatings">Forum</label></li>
+                        <li class="checkbox"><label><input name="prefer" value="10" type="checkbox" class="userRatings">course</label></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="rowTab">
+                <div class="labels">
+                    <label for="comments">Any Comments or Suggestions?</label>
+                </div>
+                <div class="rightTab">
+                    <textarea id="comments" class="input-field" style="height:50px;resize:vertical;" name="comment" placeholder="Enter your comment here..."></textarea>
+                </div>
+            </div>
+            <!-- 2 -->
+            <input type="submit" id="submit" value="submit" class="btn btn-lg btn-danger" data-bs-toggle="popover" data-bs-title="ERROR!!" data-bs-content="Enter Fields Correctly!!">
+
+        </form>
+    </div>
+    <script src="js/script2.js"></script>
+    <script>
+        document.getElementById("submit").addEventListener("click", function (event) {
+            event.preventDefault();
+            if (validateForm()) {
+                // Proceed with form submission
+                document.forms["myform"].submit();
+            }
+        });
+
+        function validateForm() {
+            var nameInput = document.getElementById("name");
+            var emailInput = document.getElementById("email");
+            var passwordInput = document.getElementById("password");
+            var ageInput = document.getElementById("age");
+            var errorMessages = {
+                name: document.getElementById("error-message-name"),
+                email: document.getElementById("error-message-email"),
+                password: document.getElementById("error-message-password"),
+                age: document.getElementById("error-message-age")
+            };
+
+            var isValid = true;
+
+            // Reset error messages
+            for (var key in errorMessages) {
+                errorMessages[key].innerText = "";
+            }
+
+            // Validate name
+            if (nameInput.value.trim() === "") {
+                errorMessages.name.innerText = "Please enter your name";
+                isValid = false;
+            }
+
+            // Validate email
+            if (emailInput.value.trim() === "") {
+                errorMessages.email.innerText = "Please enter your email";
+                isValid = false;
+            }
+
+            // Validate password
+            var password = passwordInput.value.trim();
+            if (password === "") {
+                errorMessages.password.innerText = "Please enter your password";
+                isValid = false;
+            } else if (!isPasswordValid(password)) {
+                errorMessages.password.innerText = "Password must contain at least 8 characters, including an uppercase letter, a number, and a special character";
+                isValid = false;
+            }
+
+            // Validate age
+            if (ageInput.value === "" || parseInt(ageInput.value) < 14 || parseInt(ageInput.value) > 99) {
+                errorMessages.age.innerText = "Please enter a valid age between 14 and 99";
+                isValid = false;
+            }
+
+            return isValid;
+        }
+
+        function isPasswordValid(password) {
+            var passwordRegex = /^(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}$/;
+            return passwordRegex.test(password);
+        }
+
+        // Initialize Bootstrap popover
+        var popoverTriggerList = [].slice.call(document.querySelectorAll('[data-bs-toggle="popover"]'));
+        var popoverList = popoverTriggerList.map(function (popoverTriggerEl) {
+            return new bootstrap.Popover(popoverTriggerEl);
+        });
+    </script>
+</body>
+
+</html>

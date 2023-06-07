@@ -88,3 +88,21 @@ inputs.forEach(input => {
 });
  // Check fields initially
 checkFields();
+
+
+const passwordInput = document.getElementById("password");
+const errorMessage = document.getElementById("error-message-password");
+
+passwordInput.addEventListener("input", () => {
+  const password = passwordInput.value;
+  const regex = /^(?=.*\d)(?=.*[A-Z])(?=.*[a-z])(?=.*[^\w\d\s:])([^\s]){8,32}$/;
+
+  if (!regex.test(password)) {
+    errorMessage.textContent = "Password must contain at least 8 characters, including a capital letter, a number, and a special character (@ $ ! % * ? &)";
+    passwordInput.classList.add("invalid");
+  } else {
+    errorMessage.textContent = "";
+    passwordInput.classList.remove("invalid");
+  }
+});
+
