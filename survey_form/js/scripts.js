@@ -4,7 +4,8 @@ const errorMessageName = document.getElementById("error-message-name");
 // Get all input fields
 const inputs = document.querySelectorAll('.input-field');
 const submitBtn = document.getElementById('submit');
-
+const popoverTriggerList = document.querySelectorAll('[data-bs-toggle="popover"]')
+const popoverList = [...popoverTriggerList].map(popoverTriggerEl => new bootstrap.Popover(popoverTriggerEl))
 // Disable the submit button initially
 submitBtn.disabled = true;
 
