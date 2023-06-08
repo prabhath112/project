@@ -106,3 +106,142 @@ passwordInput.addEventListener("input", () => {
   }
 });
 
+//test 
+
+
+
+
+
+document.getElementById('myForm').addEventListener('submit', function(event) {
+  event.preventDefault(); // Prevent form submission
+
+  // Get the selected radio button value
+  const city = document.getElementById('dropdownCity').value;
+  const gender = document.getElementById('dropdown').value;
+  const userRating = document.querySelector('input[name="radio-buttons"]:checked');
+  const mostLike = document.getElementById('most-like').value;
+
+  // Get the checked checkboxes
+  const preferences = Array.from(document.querySelectorAll('input[name="prefer"]:checked'))
+    .map(checkbox => checkbox.value);
+
+  // Get the comments
+  const comments = document.getElementById('comments').value;
+
+  // Generate the confirmation message
+  let confirmationMessage = '';
+  if (city) {
+    confirmationMessage += `City: ${city}\n`;
+  }
+  if (gender) {
+    confirmationMessage += `Gender: ${gender}\n`;
+  }
+  if (userRating) {
+    confirmationMessage += `User Rating: ${userRating.value}\n`;
+  }
+  if (mostLike) {
+    confirmationMessage += `Liked most: ${mostLike}\n`;
+  }
+  if (preferences.length > 0) {
+    const preferencesList = `{${preferences.join(', ')}}`;
+    confirmationMessage += `Preferences: ${preferencesList}\n`;
+  }
+  if (comments) {
+    confirmationMessage += `Comments: ${comments}\n`;
+  }
+
+  // Display the confirmation message
+  const confirmation = confirm(confirmationMessage);
+  if (confirmation) {
+    // Form submission logic
+    alert('Form submitted successfully!');
+    // Reset the form if needed
+    document.getElementById('myForm').reset();
+  }
+});
+
+//to
+
+//from
+// document.getElementById('myForm').addEventListener('submit', function(event) {
+//   event.preventDefault(); // Prevent form submission
+
+//   // Get the selected radio button value
+//   const city = document.getElementById('dropdownCity').value;
+//   const gender = document.getElementById('dropdown').value;
+//   const userRating = document.querySelector('input[name="radio-buttons"]:checked');
+//   const mostLike = document.getElementById('most-like').value;
+
+//   // Get the checked checkboxes
+//   const preferences = Array.from(document.querySelectorAll('input[name="prefer"]:checked'))
+//     .map(checkbox => checkbox.value);
+
+//   // Get the comments
+//   const comments = document.getElementById('comments').value;
+
+//   // Generate the confirmation message
+//   let confirmationMessage = '';
+//   if (city) {
+//     confirmationMessage += `City: ${city}\n`;
+//   }
+//   if (gender) {
+//     confirmationMessage += `Gender: ${gender}\n`;
+//   }
+//   if (userRating) {
+//     confirmationMessage += `User Rating: ${userRating.value}\n`;
+//   }
+//   if (mostLike) {
+//     confirmationMessage += `Liked most: ${mostLike}\n`;
+//   }
+//   if (preferences.length > 0) {
+//     const preferencesList = `{${preferences.join(', ')}}`;
+//     confirmationMessage += `Preferences: ${preferencesList}\n`;
+//   }
+//   if (comments) {
+//     confirmationMessage += `Comments: ${comments}\n`;
+//   }
+
+//   // Display the confirmation message
+//   if (confirmationMessage) {
+//     const confirmation = confirm(confirmationMessage);
+//     if (confirmation) {
+//       // Form submission logic
+//       alert('Form submitted successfully!');
+//       // Reset the form if needed
+//       document.getElementById('myForm').reset();
+//     }
+//   } else {
+//     alert('Please fill in all the required fields before submitting the form.');
+//   }
+// });
+//to
+
+
+
+// // test
+// const username = document.getElementById('username').value; 
+// const name = document.getElementById('name').value; 
+// const email = document.getElementById('email').value; 
+// const pass = document.getElementById('password').value; 
+// const conpass = document.getElementById('confirm-password').value; 
+// const age = document.getElementById('age').value; 
+// const city = document.getElementById('city').value; 
+// const gender = document.getElementById('gender').value; 
+// const age = document.getElementById('age').value; 
+// const age = document.getElementById('age').value; 
+// const age = document.getElementById('age').value; 
+// const age = document.getElementById('age').value; 
+// end 
+  // Check if all fields are valid
+//   if (username && name && email && pass && conpass && age) {
+//     const confirmation = confirm('Are you sure you want to submit the form?\nName: ' +name + '\nEmail: ' + email+ '\nUser Name: ' + username+ '\nAge: ' + age);
+//     if (confirmation) {
+//       // Form submission logic
+//       alert('Form submitted successfully!');
+//       // Reset the form if needed
+//       document.getElementById('myForm').reset();
+//     }
+//   } else {
+//     alert('Please fill in all the fields correctly.');
+//   }
+// });

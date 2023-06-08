@@ -15,7 +15,7 @@
             
             <div class="rowTab">
                 <div class="labels">
-                    <label id="name-label" for="name"> Name: </label>
+                    <label id="name-label" for="name">Full Name: </label>
                 </div>
                 <div class="rightTab">
                     <input autofocus type="text" name="name"autocomplete="off" id="name" class="input-field"  placeholder="Enter your name"required>
@@ -30,16 +30,34 @@
                         <input type="email" name="email"autocomplete="off" id="email" class="input-field" required placeholder="Enter your Email">
                         <p id="error-message-email"></p>
                     </div>
-                    </div> 
-                    <div class="rowTab">
-                        <div class="labels">
-                            <label id="password-label" for="password"> Password: </label>
-                        </div>
-                        <div class="rightTab">
-                            <input type="password" name="Password"autocomplete="off" id="password" class="input-field" required placeholder="Enter your Password">
-                            <p id="error-message-password"></p>
-                        </div>
-                        </div>
+                </div> 
+                <div class="rowTab">
+                    <div class="labels">
+                        <label id="uname-label" for="usrname"> User ID: </label>
+                    </div>
+                    <div class="rightTab">
+                        <input type="text" name="username"autocomplete="off" id="username" class="input-field" required placeholder="Enter your User Id">
+                        <p id="error-message-uname"></p>
+                    </div>
+                </div>
+                <div class="rowTab">
+                    <div class="labels">
+                        <label id="password-label" for="password"> Password: </label>
+                    </div>
+                    <div class="rightTab">
+                        <input type="password" name="Password"autocomplete="off" id="password" class="input-field" required placeholder="Enter your Password">
+                        <p id="error-message-password"></p>
+                    </div>
+                </div>
+                <div class="rowTab">
+                    <div class="labels">
+                        <label id="password-label" for="confirm-password">Confirm Password: </label>
+                    </div>
+                    <div class="rightTab">
+                        <input type="password" name="confirm-Password"autocomplete="off" id="confirm-password" class="input-field" required placeholder="Enter your Password">
+                           <p id="error-message-password-confirm"></p>
+                       </div>
+                   </div>
                 <div class="rowTab">
                 <div class="labels">
                     <label id="number-label" for="age">Age: </label>
@@ -56,7 +74,7 @@
                         <label for="Currentpost">Your city:</label>
                     </div>
                      <div class="rightTab">
-                    <select id="dropdownCity"autocomplete="off" name="city" class="dropdown"required>
+                    <select id="dropdownCity"autocomplete="off" id="city" name="city" class="dropdown"required>
                         <option disabled selected value>Select an option</option>
                         <option value="bangalore">bangalore</option>
                         <option value="mangalore">mangalore</option>
@@ -69,7 +87,7 @@
                     <label for="Currentpost">Your Gender:</label>
                 </div>
                 <div class="rightTab">
-                    <select id="dropdown" name="gender" class="dropdown" autocomplete="off" required>
+                    <select id="dropdown" name="gender" id="gender" class="dropdown" autocomplete="off" required>
                         <option disabled selected value>Select an option</option>
                         <option value="Male">Male</option>
                         <option value="Female">Female</option>
@@ -134,7 +152,8 @@
             <!-- 2 -->
             <input id="submit" type="submit" value="submit" onclick="confirm('name : '+document.getElementById('name').value+'\nemail: '+document.getElementById('email').value
             +'\nAge: '+document.getElementById('age').value);"hidden >
-            <input type="submit"id="submit" value="submit" class="btn btn-lg btn-danger" data-bs-toggle="popover" data-bs-title="ERROR!!" data-bs-content="Enter Fields Correctly!!">
+            <input type="submit" id="submit" class="btn btn-lg btn-danger" value="submit" data-bs-toggle="popover" data-bs-title="ERROR!!" data-bs-content="Enter Fields Correctly!!">
+            <!-- <input type="submit" id="submit" value="submit" class="btn btn-lg btn-danger" data-bs-toggle="popover" data-bs-title="ERROR!!" data-bs-content="Enter Fields Correctly!!"> -->
 
         </form>
     </div>
